@@ -110,7 +110,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 |--------|---------|------|----------|
 | **Python** | `pip install -r requirements.txt && python app.py` | 2-5 min | Python 3.9+ |
 | **Docker** | `docker-compose up -d` | 30 sec | Docker + Compose |
-| **Hugging Face** | Click link | 1 sec | Web browser |
+| **Hugging Face** | [![Hugging Face](https://img.shields.io/badge/🤗%20Live%20Demo-FFD21E?style=flat-square&logo=huggingface)](https://huggingface.co/spaces/fcyber/agentic_rag) | 1 sec | Web browser |
 
 
 ### 📦 Option 1: Python (Local Setup)
