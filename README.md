@@ -161,7 +161,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 ### 🤗 Option 3: Hugging Face Spaces
 
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/fcyber/)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/fcyber/)
 
 ```bash
 # No installation needed! Click the badge above to try the live demo.
