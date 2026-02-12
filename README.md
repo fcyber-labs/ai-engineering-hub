@@ -3,7 +3,7 @@
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-link)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](your-twitter-link)
+[![Hugging Face](https://img.shields.io/badge/Hugging_Face-Profile-yellow?style=for-the-badge&logo=huggingface)](https://huggingface.co/fcyber)
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-0.1.0-1C3C3C?logo=langchain&logoColor=white)
@@ -48,9 +48,10 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 ## 📂 Featured AI Projects
 
-### 👨‍💼 Agentic RAG Assistant
-**Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.**
+### 1. 👨‍💼 Agentic RAG Assistant
 
+**Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.(./01-agentic-rag-assistant)**
+**Test it (**https://huggingface.co/spaces/fcyber/agentic_rag**)**
 <div align="center">
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
@@ -69,7 +70,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 | **🔄 Self-Correction** | Automatically detects and fixes inadequate responses. |
 | **📊 Hybrid Retrieval** | Combines semantic, keyword, and knowledge graph search. |
 
-👉 **[View Project →](./01-agentic-rag-assistant)**
+
 
 ---
 
@@ -93,7 +94,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/yourusername/ai-engineering-hub.git](https://github.com/yourusername/ai-engineering-hub.git)
+   git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
 
 
 2. **Navigate to the desired project directory**
@@ -143,9 +144,9 @@ We welcome contributions! Please follow these steps:
  
 ## 📊 Repository Stats 
 <div align="center">
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/ai-engineering-hub?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/yourusername/ai-engineering-hub?style=social)
-![GitHub Watchers](https://img.shields.io/github/watchers/yourusername/ai-engineering-hub?style=social)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/ai-engineering-hub)
-![GitHub PRs](https://img.shields.io/github/issues-pr/yourusername/ai-engineering-hub)
+![GitHub Stars](https://img.shields.io/github/stars/fcyber/ai-engineering-hub?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/fcyber/ai-engineering-hub?style=social)
+![GitHub Watchers](https://img.shields.io/github/watchers/fcyber/ai-engineering-hub?style=social)
+![GitHub Issues](https://img.shields.io/github/issues/fcyber/ai-engineering-hub)
+![GitHub PRs](https://img.shields.io/github/issues-pr/fcyber/ai-engineering-hub)
 </div>
