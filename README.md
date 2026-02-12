@@ -189,9 +189,18 @@ python app.py  # Gradio apps run with python
 ## 🤝 Contributing
 We welcome contributions! Please follow these steps:
 - Fork the repository
-- Create a feature branch (`git checkout -b feature/amazing-project`)
-- Commit your changes (`git commit -m 'Add amazing project'`)
-- Push to the branch (`git push origin feature/amazing-project`)
+- Create a feature branch 
+   ```bash
+  git checkout -b feature/amazing-project
+      ```
+- Commit your changes 
+   ```bash
+  git commit -am 'Add amazing project'
+  ```
+- Push to the branch
+  ```bash
+  git push origin feature/amazing-project
+    ```
 - Open a Pull Request
 
 ### ✅ Contribution Checklist
