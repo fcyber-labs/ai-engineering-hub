@@ -99,6 +99,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 ---
 
 ## 🚀 Getting Started
+### 📦 Option 1: Python (Local Setup)
 
 1. **Clone the repository**
    ```bash
@@ -117,6 +118,43 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
 
+
+# Option 2: Docker Compose (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/fcyber/ai-engineering-hub.git
+
+# Navigate to project directory
+cd ai-engineering-hub/01-agentic-rag-assistant
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys
+
+# Run with Docker Compose
+docker-compose up -d
+
+# View logs (optional)
+docker-compose logs -f
+
+# Stop the container
+docker-compose down
+```
+
+**That's it!** The project includes a pre-configured `Dockerfile` and `docker-compose.yml` — no additional setup needed.
+
+---
+
+# Option 3: Hugging Face Spaces [![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%2520Live%2520Demo-Hugging%2520Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/your-space-url)
+
+```bash
+# No installation needed! Click the badge above to try the live demo.
+# Or clone and run locally:
+pip install huggingface-hub
+huggingface-cli download fcyber/agentic-rag-assistant
+streamlit run app.py
+```
 ---
 
 ## 🛠️ Technology Stack
