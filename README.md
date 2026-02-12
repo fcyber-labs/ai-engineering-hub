@@ -117,11 +117,11 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
    ```
 
 Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
-
+---
 
 ### 🐳 Option 2: Docker Compose (Recommended)
 
-```bash
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/fcyber/ai-engineering-hub.git
@@ -153,7 +153,7 @@ Follow the project-specific instructions in each project's `README.md` file to s
 
 ---
 
-# Option 3: Hugging Face Spaces [![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%2520Live%2520Demo-Hugging%2520Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/your-space-url)
+### Option 3: Hugging Face Spaces [![Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%2520Live%2520Demo-Hugging%2520Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
 ```bash
 # No installation needed! Click the badge above to try the live demo.
