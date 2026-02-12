@@ -205,7 +205,7 @@ We welcome contributions! Please follow these steps:
 -requirements.txt with pinned versions
 -Screenshots demonstrating functionality 
 
-# 🙏 Thank You, Community, for the Support!
+## 🙏 Thank You, Community, for the Support!
 
 <center>
 ⭐ Star this repository if you find it useful! ⭐
