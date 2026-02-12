@@ -14,6 +14,13 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28.0-FF4B4B?logo=streamlit&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-27.0%2B-2496ED?logo=docker&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-1.2%2B-5C6BC0?logo=protocol&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-7.2%2B-DC382D?logo=redis&logoColor=white)
+![A2A](https://img.shields.io/badge/A2A-2.0%2B-FF6B4A?logo=a2a&logoColor=white)
+![Autogen](https://img.shields.io/badge/Autogen-0.2%2B-4B8BBE?logo=autogen&logoColor=white)
+![crewAI](https://img.shields.io/badge/crewAI-0.3%2B-FFA500?logo=crewai&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.104%2B-009688?logo=fastapi&logoColor=white)
 
 <h3>A curated collection of production-ready LLM applications built with RAG, AI Agents, Agentic Systems, MCP, and more</h3>
 
