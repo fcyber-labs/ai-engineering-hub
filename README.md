@@ -20,7 +20,19 @@
 This repository features LLM apps that use models from <strong>OpenAI</strong>, <strong>Anthropic</strong>, <strong>Google</strong>, <strong>xAI</strong> and open-source models like <strong>Qwen</strong> or <strong>Llama</strong> that you can run locally on your computer.
 </p>
 
-**[English](README.md)** | [Deutsch](#) | [Español](#) | [Français](#) | [日本語](#) | [한국어](#) | [Português](#) | [Русский](#) | [中文](#)
+<div align="right">
+  
+[![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
+[![ES](https://img.shields.io/badge/ES-Español-red)](README.es.md)
+[![FR](https://img.shields.io/badge/FR-Français-blue)](README.fr.md)
+[![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
+[![JA](https://img.shields.io/badge/JA-日本語-red)](README.ja.md)
+[![KO](https://img.shields.io/badge/KO-한국어-blue)](README.ko.md)
+[![PT](https://img.shields.io/badge/PT-Português-green)](README.pt.md)
+[![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
+[![ZH](https://img.shields.io/badge/ZH-中文-yellow)](README.zh.md)
+
+</div>
 
 [📂 Featured AI Projects](#-featured-ai-projects) •
 [🚀 Getting Started](#-getting-started) •
@@ -45,9 +57,9 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 
 
-[### 1. 👨‍💼 Agentic RAG Assistant: **Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.**](./01-agentic-rag-assistant)
+### [1. 👨‍💼 Agentic RAG Assistant: **Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.**](./01-agentic-rag-assistant)
 
-[**Test it**](https://huggingface.co/spaces/fcyber/agentic_rag)
+[**🤗 Test it**](https://huggingface.co/spaces/fcyber/agentic_rag)
 <div align="center">
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
