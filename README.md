@@ -210,7 +210,7 @@ We welcome contributions! Please follow these steps:
 -.env.example with all required variables
 -requirements.txt with pinned versions
 -Screenshots demonstrating functionality 
-
+---
 ## 🙏 Thank You, Community, for the Support!
 <br> <br>
 
