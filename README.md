@@ -104,7 +104,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 | **Docker** | `docker-compose up -d` | 30 sec | Docker + Compose |
 | **Hugging Face** | Click link | 1 sec | Web browser |
 
----
+
 ### 📦 Option 1: Python (Local Setup)
 
 1. **Clone the repository**
@@ -123,7 +123,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
    ```
 
 #### Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
-----
+
 
 ### 🐳 Option 2: Docker Compose (Recommended)
 
@@ -157,7 +157,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 **That's it!** The project includes a pre-configured `Dockerfile` and `docker-compose.yml` — no additional setup needed.
 
-----
+
 
 ### 🤗 Option 3: Hugging Face Spaces
 
