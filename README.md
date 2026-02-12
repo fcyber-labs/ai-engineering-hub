@@ -245,3 +245,6 @@ We welcome contributions! Please follow these steps:
 <sub>Built with ❤️ by AI Engineers for AI Engineers</sub>
 
 </center>
+
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
+[![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
