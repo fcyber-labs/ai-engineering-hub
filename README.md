@@ -20,7 +20,7 @@
 This repository features LLM apps that use models from <strong>OpenAI</strong>, <strong>Anthropic</strong>, <strong>Google</strong>, <strong>xAI</strong> and open-source models like <strong>Qwen</strong> or <strong>Llama</strong> that you can run locally on your computer.
 </p>
 
-<div align="right">
+<div align="center">
   
 [![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
 [![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
