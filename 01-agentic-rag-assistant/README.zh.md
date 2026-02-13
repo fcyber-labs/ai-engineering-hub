@@ -34,7 +34,7 @@
 
 ---
 
-![Agentic RAG Workflow](media/workflow.png)
+![代理RAG工作流程](media/workflow.jpeg)
 
 
 

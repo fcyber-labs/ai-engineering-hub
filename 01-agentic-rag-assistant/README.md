@@ -36,7 +36,7 @@
 
 ---
 
-![Agentic RAG Workflow](media/workflow.png)
+![Agentic RAG Workflow](media/workflow.jpeg)
 
 
 

@@ -35,7 +35,7 @@
 
 ---
 
-![Agentic RAG Workflow](media/workflow.png)
+![Агентный RAG-процесс](media/workflow.jpeg)
 
 
 

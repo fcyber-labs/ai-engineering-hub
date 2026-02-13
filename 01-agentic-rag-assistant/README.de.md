@@ -38,7 +38,7 @@
 
 
 
-![Agentic RAG Workflow](media/workflow.png)
+![Agentischer RAG-Workflow](media/workflow.jpeg)
 
 ---
 
@@ -77,7 +77,8 @@ pip install -r requirements.txt
 • • •
 
 ### 🐳 Option 2: Docker Compose (Empfohlen)
-
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
+[![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 1. **Repository klonen**
 ```bash
 git clone https://github.com/fcyber/ai-engineering-hub.git
@@ -118,7 +119,7 @@ docker-compose down
 
 ### 🤗 Option 3: Hugging Face Spaces
 
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live-Demo-Hugging%20Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/fcyber/)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/fcyber/)
 
 ```bash
 # Keine Installation erforderlich! Klicken Sie auf das Abzeichen oben, um die Live-Demo zu testen.

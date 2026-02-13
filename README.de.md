@@ -66,9 +66,9 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 <div align="center">
 
 ![Status](https://img.shields.io/badge/Status-Aktiv-success)
-![Schwierigkeit](https://img.shields.io/badge/Schwierigkeit-Fortgeschritten-rot)
-![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-lila)
-![Hybride Suche](https://img.shields.io/badge/Hybride_Suche-%E2%9C%93-blau)
+![Schwierigkeit](https://img.shields.io/badge/Schwierigkeit-Fortgeschritten-red)
+![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-purple)
+![Hybride Suche](https://img.shields.io/badge/Hybride_Suche-%E2%9C%93-blue)
 ![Selbstkorrektur](https://img.shields.io/badge/Selbstkorrektur-%E2%9C%93-orange)
 
 </div>
@@ -132,7 +132,8 @@ pip install -r requirements.txt
 • • •
 
 ### 🐳 Option 2: Docker Compose (Empfohlen)
-
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
+[![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 1. **Repository klonen**
 ```bash
 git clone https://github.com/fcyber/ai-engineering-hub.git
@@ -173,7 +174,7 @@ docker-compose down
 
 ### 🤗 Option 3: Hugging Face Spaces
 
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live-Demo-Hugging%20Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/fcyber/)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/fcyber/)
 
 ```bash
 # Keine Installation erforderlich! Klicken Sie auf das Abzeichen oben, um die Live-Demo zu testen.
