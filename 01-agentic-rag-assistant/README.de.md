@@ -65,9 +65,9 @@
 ### 📦 Option 1: Python (Lokale Einrichtung)
 
 1. **Repository klonen**
-   ```bash
+   ```bash
    git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
-   ```
+   ```
 
 2. **In das gewünschte Projektverzeichnis navigieren**
    ```bash

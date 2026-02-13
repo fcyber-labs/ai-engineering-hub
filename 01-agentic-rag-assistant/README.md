@@ -6,6 +6,8 @@
 [![ZH](https://img.shields.io/badge/ZH-中文-yellow)](README.zh.md)
 
 </div>
+
+
 ### 👨‍💼 [1. Agentic RAG Assistant](./01-agentic-rag-assistant)    
 [![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](media/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
@@ -64,19 +66,19 @@
 ### 📦 Option 1: Python (Local Setup)
 
 1. **Clone the repository**
-   ```bash
+   ```bash
    git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
-
+   ```
 
 2. **Navigate to the desired project directory**
-   ```bash
+   ```bash
    cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+   ```
 
 3. **Install the required dependencies**
-   ```bash
+   ```bash
    pip install -r requirements.txt
-   ```
+   ```
 
 #### Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
 • • •
@@ -86,35 +88,35 @@
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
 1. **Clone the repository**
-   ```bash
+   ```bash
    git clone https://github.com/fcyber/ai-engineering-hub.git
-   ```
+   ```
 2. **Navigate to the desired project directory**
-   ```bash
+   ```bash
    cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+   ```
 
 3. **Set up environment variables**
-   ```bash
+   ```bash
    cp .env.example .env
    # Edit .env with your API keys
-   ```
+   ```
 4. **Run with Docker Compose**
-   ```bash
+   ```bash
    docker-compose up -d
-   ```
+   ```
 5. **View logs (optional)**
-   ```bash
+   ```bash
    docker-compose logs -f
-   ```
+   ```
 6. **Open in browser**
-   ```bash
-   http://localhost:7860
-   ```
+   ```bash
+   http://localhost:7860
+   ```
 7. **Stop the container**
-   ```bash
+   ```bash
    docker-compose down
-   ```
+   ```
 
 **That's it!** The project includes a pre-configured `Dockerfile` and `docker-compose.yml` — no additional setup needed.
 

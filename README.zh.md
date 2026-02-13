@@ -152,7 +152,7 @@
    ```
 6. **在浏览器中打开**
    ```bash
-   http://localhost:7860
+   http://localhost:7860
    ```
 7. **停止容器**
    ```bash

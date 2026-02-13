@@ -1,7 +1,5 @@
-
-
 <div align="center">
-  
+  
 [![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
 [![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
 [![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
@@ -9,13 +7,6 @@
 
 </div>
 
-[📂 精选AI项目](#-精选ai项目) •
-[🚀 快速开始](#-快速开始) •
-[🤔 为什么选择AI Engineering Hub？](#-为什么选择ai-engineering-hub) •
-[🤝 参与贡献](#-参与贡献) •
-[🙏 感谢](#-感谢社区支持)
-
-</div>
 
 
 ### 👨‍💼 [1. 代理型RAG助手](./01-agentic-rag-assistant)   
@@ -121,7 +112,7 @@
    ```
 6. **在浏览器中打开**
    ```bash
-   http://localhost:7860
+   http://localhost:7860
    ```
 7. **停止容器**
    ```bash
