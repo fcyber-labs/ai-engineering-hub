@@ -34,24 +34,11 @@
 | **📊 Hybrid Retrieval** | Combines semantic, keyword, and knowledge graph search. |
 
 
-
 ---
 
-### 🚧 More Projects Coming Soon
+![Agentic RAG Workflow](media/workflow.png)
 
-<details><summary><b>🔮 Planned Projects (Click to Expand)</b></summary>
 
-| Project | Description | Status |
-| :--- | :--- | :--- |
-| 🗣️ **Voice RAG Agent** | Voice-enabled Q&A with real-time transcription | `Planned` |
-| 🌐 **MCP Browser Agent** | Browser automation with Model Context Protocol | `Planned` |
-| 🤝 **Multi-Agent Research** | Collaborative research agents with handoffs | `Planned` |
-| 📄 **Chat with PDF** | Document Q&A with hybrid search | `Planned` |
-| 💬 **Stateful Memory** | Conversational AI with persistent memory | `Planned` |
-
-</details>
-
----
 
 ## 🚀 Getting Started
 ### 🎯 Quick Start Comparison (Updated)
@@ -66,19 +53,19 @@
 ### 📦 Option 1: Python (Local Setup)
 
 1. **Clone the repository**
-   ```bash
+   ```bash
    git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
-   ```
+   ```
 
 2. **Navigate to the desired project directory**
-   ```bash
+   ```bash
    cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+   ```
 
 3. **Install the required dependencies**
-   ```bash
+   ```bash
    pip install -r requirements.txt
-   ```
+   ```
 
 #### Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
 • • •
@@ -88,35 +75,38 @@
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/fcyber/ai-engineering-hub.git
-   ```
+```bash
+git clone https://github.com/fcyber/ai-engineering-hub.git
+```
+
 2. **Navigate to the desired project directory**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your API keys
-   ```
+```bash
+cp .env.example .env
+# Edit .env with your GROQ_API_KEY keys
+```
+
 4. **Run with Docker Compose**
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
+
 5. **View logs (optional)**
-   ```bash
-   docker-compose logs -f
-   ```
+```bash
+docker-compose logs -f
+```
+
 6. **Open in browser**
-   ```bash
-   http://localhost:7860
-   ```
+[http://localhost:7860](http://localhost:7860)
+
 7. **Stop the container**
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
 
 **That's it!** The project includes a pre-configured `Dockerfile` and `docker-compose.yml` — no additional setup needed.
 

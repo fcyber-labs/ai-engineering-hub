@@ -36,21 +36,13 @@
 
 ---
 
-### 🚧 Weitere Projekte in Kürze
 
-<details><summary><b>🔮 Geplante Projekte (Zum Erweitern klicken)</b></summary>
 
-| Projekt | Beschreibung | Status |
-| :--- | :--- | :--- |
-| 🗣️ **Sprach-RAG-Agent** | Sprachgestützte Frage-Antwort mit Echtzeit-Transkription | `Geplant` |
-| 🌐 **MCP-Browser-Agent** | Browserautomatisierung mit Model Context Protocol | `Geplant` |
-| 🤝 **Multi-Agenten-Forschung** | Kollaborative Forschungsagenten mit Übergaben | `Geplant` |
-| 📄 **Chat mit PDF** | Dokumentenfrage-Antwort mit hybrider Suche | `Geplant` |
-| 💬 **Zustandsbehafteter Speicher** | Konversations-KI mit persistentem Speicher | `Geplant` |
-
-</details>
+![Agentic RAG Workflow](media/workflow.png)
 
 ---
+
+
 
 ## 🚀 Erste Schritte
 
@@ -64,20 +56,21 @@
 
 ### 📦 Option 1: Python (Lokale Einrichtung)
 
+
 1. **Repository klonen**
-   ```bash
-   git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
-   ```
+```bash
+git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
+```
 
 2. **In das gewünschte Projektverzeichnis navigieren**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **Erforderliche Abhängigkeiten installieren**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 #### Befolgen Sie die projektspezifischen Anweisungen in der `README.md`-Datei jedes Projekts, um die App einzurichten und auszuführen.
 
@@ -86,38 +79,38 @@
 ### 🐳 Option 2: Docker Compose (Empfohlen)
 
 1. **Repository klonen**
-   ```bash
-   git clone https://github.com/fcyber/ai-engineering-hub.git
-   ```
+```bash
+git clone https://github.com/fcyber/ai-engineering-hub.git
+```
 
 2. **In das gewünschte Projektverzeichnis navigieren**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **Umgebungsvariablen einrichten**
-   ```bash
-   cp .env.example .env
-   # .env mit Ihren API-Schlüsseln bearbeiten
-   ```
+```bash
+cp .env.example .env
+# .env mit Ihren GROQ_API_KEY-Schlüsseln bearbeiten
+```
 
 4. **Mit Docker Compose ausführen**
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
 5. **Logs anzeigen (optional)**
-   ```bash
-   docker-compose logs -f
-   ```
-6. **Logs anzeigen (optional)**
-   ```bash
-   http://localhost:7860
-   ```
+```bash
+docker-compose logs -f
+```
+
+6. **Zugriff auf die Anwendung (optional)**
+Besuchen Sie [http://localhost:7860](http://localhost:7860) im Browser.
+
 7. **Container stoppen**
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
 
 **Das war's!** Das Projekt enthält ein vorkonfiguriertes `Dockerfile` und `docker-compose.yml` — keine zusätzliche Einrichtung erforderlich.
 

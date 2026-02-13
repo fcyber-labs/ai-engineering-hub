@@ -83,9 +83,8 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 | **🔄 Self-Correction** | Automatically detects and fixes inadequate responses. |
 | **📊 Hybrid Retrieval** | Combines semantic, keyword, and knowledge graph search. |
 
-
-
 ---
+
 
 ### 🚧 More Projects Coming Soon
 
@@ -137,36 +136,36 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
-## 1. Clone the repository
+1. **Clone the repository**
 ```bash
 git clone https://github.com/fcyber/ai-engineering-hub.git
 ```
 
-## 2. Navigate to the desired project directory
+2. **Navigate to the desired project directory**
 ```bash
 cd ai-engineering-hub/01-agentic-rag-assistant
 ```
 
-## 3. Set up environment variables
+3. **Set up environment variables**
 ```bash
 cp .env.example .env
 # Edit .env with your GROQ_API_KEY keys
 ```
 
-## 4. Run with Docker Compose
+4. **Run with Docker Compose**
 ```bash
 docker-compose up -d
 ```
 
-## 5. View logs (optional)
+5. **View logs (optional)**
 ```bash
 docker-compose logs -f
 ```
 
-## 6. Open in browser
+6. **Open in browser**
 [http://localhost:7860](http://localhost:7860)
 
-## 7. Stop the container
+7. **Stop the container**
 ```bash
 docker-compose down
 ```

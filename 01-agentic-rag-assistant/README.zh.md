@@ -34,21 +34,9 @@
 
 ---
 
-### 🚧 更多项目即将推出
+![Agentic RAG Workflow](media/workflow.png)
 
-<details><summary><b>🔮 计划中的项目（点击展开）</b></summary>
 
-| 项目 | 描述 | 状态 |
-| :--- | :--- | :--- |
-| 🗣️ **语音RAG智能体** | 支持语音的问答，实时转录 | `计划中` |
-| 🌐 **MCP浏览器智能体** | 基于模型上下文协议的浏览器自动化 | `计划中` |
-| 🤝 **多智能体研究** | 具有任务交接的协作研究智能体 | `计划中` |
-| 📄 **PDF聊天** | 支持混合搜索的文档问答 | `计划中` |
-| 💬 **状态记忆** | 具有持久性记忆的对话式AI | `计划中` |
-
-</details>
-
----
 
 ## 🚀 快速开始
 
@@ -62,20 +50,21 @@
 
 ### 📦 选项1：Python（本地设置）
 
+
 1. **克隆代码库**
-   ```bash
-   git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
-   ```
+```bash
+git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
+```
 
 2. **导航到所需项目目录**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **安装所需的依赖项**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 #### 请遵循每个项目`README.md`文件中的特定项目说明来设置和运行应用。
 
@@ -85,39 +74,42 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
+
 1. **克隆代码库**
-   ```bash
-   git clone https://github.com/fcyber/ai-engineering-hub.git
-   ```
+```bash
+git clone https://github.com/fcyber/ai-engineering-hub.git
+```
 
 2. **导航到所需项目目录**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **设置环境变量**
-   ```bash
-   cp .env.example .env
-   # 使用您的API密钥编辑.env文件
-   ```
+```bash
+cp .env.example .env
+# 使用您的API密钥编辑.env文件 GROQ_API_KEY
+```
 
 4. **使用Docker Compose运行**
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
 5. **查看日志（可选）**
-   ```bash
-   docker-compose logs -f
-   ```
+```bash
+docker-compose logs -f
+```
+
 6. **在浏览器中打开**
-   ```bash
-   http://localhost:7860
-   ```
+```bash
+http://localhost:7860
+```
+
 7. **停止容器**
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
 
 **就这样！** 项目包含预配置的`Dockerfile`和`docker-compose.yml` — 无需额外设置。
 

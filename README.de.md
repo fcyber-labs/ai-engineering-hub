@@ -112,17 +112,17 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 ### 📦 Option 1: Python (Lokale Einrichtung)
 
 
-## 1. Repository klonen
+1. **Repository klonen**
 ```bash
 git clone [https://github.com/fcyber/ai-engineering-hub.git](https://github.com/fcyber/ai-engineering-hub.git)
 ```
 
-## 2. In das gewünschte Projektverzeichnis navigieren
+2. **In das gewünschte Projektverzeichnis navigieren**
 ```bash
 cd ai-engineering-hub/01-agentic-rag-assistant
 ```
 
-## 3. Erforderliche Abhängigkeiten installieren
+3. **Erforderliche Abhängigkeiten installieren**
 ```bash
 pip install -r requirements.txt
 ```
@@ -133,36 +133,36 @@ pip install -r requirements.txt
 
 ### 🐳 Option 2: Docker Compose (Empfohlen)
 
-## 1. Repository klonen
+1. **Repository klonen**
 ```bash
 git clone https://github.com/fcyber/ai-engineering-hub.git
 ```
 
-## 2. In das gewünschte Projektverzeichnis navigieren
+2. **In das gewünschte Projektverzeichnis navigieren**
 ```bash
 cd ai-engineering-hub/01-agentic-rag-assistant
 ```
 
-## 3. Umgebungsvariablen einrichten
+3. **Umgebungsvariablen einrichten**
 ```bash
 cp .env.example .env
 # .env mit Ihren GROQ_API_KEY-Schlüsseln bearbeiten
 ```
 
-## 4. Mit Docker Compose ausführen
+4. **Mit Docker Compose ausführen**
 ```bash
 docker-compose up -d
 ```
 
-## 5. Logs anzeigen (optional)
+5. **Logs anzeigen (optional)**
 ```bash
 docker-compose logs -f
 ```
 
-## 6. Zugriff auf die Anwendung (optional)
+6. **Zugriff auf die Anwendung (optional)**
 Besuchen Sie [http://localhost:7860](http://localhost:7860) im Browser.
 
-## 7. Container stoppen
+7. **Container stoppen**
 ```bash
 docker-compose down
 ```
@@ -202,18 +202,19 @@ python app.py  # Gradio-Apps werden mit python ausgeführt
 Wir begrüßen Beiträge! Bitte befolgen Sie diese Schritte:
 
 - Repository forken
-- Einen Feature-Branch erstellen 
-   ```bash
-   git checkout -b feature/erstaunliches-projekt
-   ```
-- Ihre Änderungen committen 
-  ```bash
-  git commit -am 'Erstaunliches Projekt hinzufügen'
-  ```
+- Einen Feature-Branch erstellen
+  
+```bash
+git checkout -b feature/erstaunliches-projekt
+```
+- Ihre Änderungen committen
+```bash
+git commit -am 'Erstaunliches Projekt hinzufügen'
+```
 - In den Branch pushen
-  ```bash
-  git push origin feature/erstaunliches-projekt
-  ```
+```bash
+git push origin feature/erstaunliches-projekt
+```
 - Einen Pull Request öffnen
 
 ### ✅ Checkliste für Beiträge

@@ -22,7 +22,7 @@
 </p>
 
 <div align="center">
-  
+  
 [![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
 [![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
 [![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
@@ -90,6 +90,8 @@
 
 ---
 
+
+
 ## 🚀 快速开始
 
 ### 🎯 快速启动比较（更新版）
@@ -102,7 +104,6 @@
 
 ### 📦 选项1：Python（本地设置）
 
-# 操作步骤
 
 1. **克隆代码库**
 ```bash
@@ -127,39 +128,42 @@ pip install -r requirements.txt
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/fcyber/agentic-rag-assistant)
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
+
 1. **克隆代码库**
-   ```bash
-   git clone https://github.com/fcyber/ai-engineering-hub.git
-   ```
+```bash
+git clone https://github.com/fcyber/ai-engineering-hub.git
+```
 
 2. **导航到所需项目目录**
-   ```bash
-   cd ai-engineering-hub/01-agentic-rag-assistant
-   ```
+```bash
+cd ai-engineering-hub/01-agentic-rag-assistant
+```
 
 3. **设置环境变量**
-   ```bash
-   cp .env.example .env
-   # 使用您的API密钥编辑.env文件 GROQ_API_KEY
-   ```
+```bash
+cp .env.example .env
+# 使用您的API密钥编辑.env文件 GROQ_API_KEY
+```
 
 4. **使用Docker Compose运行**
-   ```bash
-   docker-compose up -d
-   ```
+```bash
+docker-compose up -d
+```
 
 5. **查看日志（可选）**
-   ```bash
-   docker-compose logs -f
-   ```
+```bash
+docker-compose logs -f
+```
+
 6. **在浏览器中打开**
-   ```bash
-   http://localhost:7860
-   ```
+```bash
+http://localhost:7860
+```
+
 7. **停止容器**
-   ```bash
-   docker-compose down
-   ```
+```bash
+docker-compose down
+```
 
 **就这样！** 项目包含预配置的`Dockerfile`和`docker-compose.yml` — 无需额外设置。
 
@@ -199,18 +203,19 @@ python app.py  # Gradio应用通过python运行
 我们欢迎贡献！请遵循以下步骤：
 
 - 复刻（Fork）代码库
-- 创建功能分支 
-   ```bash
-   git checkout -b feature/精彩项目
-   ```
-- 提交您的更改 
-  ```bash
-  git commit -am '添加精彩项目'
-  ```
+- 创建功能分支
+  
+```bash
+git checkout -b feature/精彩项目
+```
+- 提交您的更改
+```bash
+git commit -am '添加精彩项目'
+```
 - 推送到分支
-  ```bash
-  git push origin feature/精彩项目
-  ```
+```bash
+git push origin feature/精彩项目
+```
 - 开启拉取请求（Pull Request）
 
 ### ✅ 贡献检查清单
