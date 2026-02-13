@@ -1,5 +1,5 @@
 # 🌟 AI Engineering Hub
-
+![Agentic RAG Assistant Demo](01-agentic-rag-assistant/media/gif_3.gif)
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-link)
@@ -31,9 +31,9 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 <div align="center">
   
 [![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
-[![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
-[![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
-[![ZH](https://img.shields.io/badge/ZH-中文-yellow)](README.zh.md)
+[![DE](https://img.shields.io/badge/DE-Deutsch-black)](languages/README.de.md)
+[![RU](https://img.shields.io/badge/RU-Русский-orange)](languages/README.ru.md)
+[![ZH](https://img.shields.io/badge/ZH-中文-yellow)](languages/README.zh.md)
 
 </div>
 
@@ -61,7 +61,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 
 ### 👨‍💼 [1. Agentic RAG Assistant](./01-agentic-rag-assistant)    
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](your-video-link) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/media/project_1.mov) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
 #### Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.
 
