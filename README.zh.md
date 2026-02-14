@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 1/15 个项目 · 更多即将推出</sup>
+# 🌟 AI Engineering Hub <sup>✨ 2/15 个项目 · 更多即将推出</sup>
 
 <div align="center">
 
@@ -77,14 +77,24 @@
 
 </div>
 
-| 功能 | 描述 |
-| :--- | :--- |
-| **🔀 智能路由** | 基于意图分析，动态地将查询路由到专门的智能体。 |
-| **🔍 查询优化** | 通过反思和重写来自我改进查询。 |
-| **✅ 幻觉检测** | 通过忠实度评分，根据源文档验证响应。 |
-| **🔄 自我修正** | 自动检测并修复不充分的响应。 |
-| **📊 混合检索** | 结合语义搜索、关键词搜索和知识图谱搜索。 |
 
+### 🤖 [2.  语音AI助手](./02-voice-ai-assistant)  
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+
+#### 具备实时语音识别、超快Groq推理、自然语音合成和可下载音频回复功能的语音AI助手。
+
+
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![Whisper](https://img.shields.io/badge/Whisper-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
+
+</div>
 ---
 
 ### 🚧 更多项目即将推出

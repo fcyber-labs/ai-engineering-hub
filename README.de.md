@@ -79,14 +79,24 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 
 </div>
 
-| Funktion | Beschreibung |
-| :--- | :--- |
-| **🔀 Intelligentes Routing** | Leitet Anfragen dynamisch basierend auf der Absichtsanalyse an spezialisierte Agenten weiter. |
-| **🔍 Anfragenverfeinerung** | Verbessert Anfragen selbstständig durch Reflexion und Umschreibung. |
-| **✅ Halluzinationsprüfung** | Validiert Antworten anhand von Quelldokumenten mit Treuebewertung. |
-| **🔄 Selbstkorrektur** | Erkennt und behebt automatisch unzureichende Antworten. |
-| **📊 Hybrider Abruf** | Kombiniert semantische Suche, Schlüsselwortsuche und Wissensgraphensuche. |
 
+### 🤖 [2.  Sprach-KI-Assistent](./02-voice-ai-assistant)  
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+
+#### Sprach-KI-Assistent mit Echtzeit-Spracherkennung, blitzschneller Groq-Inferenz, natürlicher Sprachsynthese und herunterladbaren Audio-Antworten.
+
+
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![Whisper](https://img.shields.io/badge/Whisper-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
+
+</div>
 ---
 
 ### 🚧 Weitere Projekte in Kürze

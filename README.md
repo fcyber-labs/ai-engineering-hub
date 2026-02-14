@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 1/15 project · more on the way</sup>
+# 🌟 AI Engineering Hub <sup>✨ 2/15 projects · more on the way</sup>
 
 <div align="center">
 
@@ -80,14 +80,23 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 </div>
 
-| Feature | Description |
-| :--- | :--- |
-| **🔀 Intelligent Routing** | Dynamically routes queries to specialized agents based on intent analysis. |
-| **🔍 Query Refinement** | Self-improves queries through reflection and rewriting. |
-| **✅ Hallucination Checking** | Validates responses against source documents with faithfulness scoring. |
-| **🔄 Self-Correction** | Automatically detects and fixes inadequate responses. |
-| **📊 Hybrid Retrieval** | Combines semantic, keyword, and knowledge graph search. |
+### 🤖 [2.  Voice AI Assistant](./02-voice-ai-assistant)  
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
 
+#### Voice AI Assistant featuring real-time speech recognition, ultra-fast Groq inference, natural voice synthesis, and downloadable audio responses.
+
+
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![Whisper](https://img.shields.io/badge/Whisper-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
+
+</div>
 ---
 
 
