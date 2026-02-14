@@ -81,7 +81,7 @@ with st.sidebar:
 
 
 try:
-    llm_text, audio_client = init_clients(selected_model, groq_api_key)
+    llm_text, audio_client = init_clients(selected_model, st.session_state.api_key)
 except Exception as e:
     st.error(f"Failed to initialize clients: {e}")
     st.stop()
