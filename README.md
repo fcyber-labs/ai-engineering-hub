@@ -81,7 +81,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 </div>
 
 ### 🤖 [2.  Voice AI Assistant](./02-voice-ai-assistant)  
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](02-voice-ai-assistant/assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
 
 #### Voice AI Assistant featuring real-time speech recognition, ultra-fast Groq inference, natural voice synthesis, and downloadable audio responses.
 

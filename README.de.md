@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 1/15 Projekte · weitere folgen</sup>
+# 🌟 AI Engineering Hub <sup>✨ 2/15 Projekte · weitere folgen</sup>
 
 <div align="center">
 
@@ -81,7 +81,7 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 
 
 ### 🤖 [2.  Sprach-KI-Assistent](./02-voice-ai-assistant)  
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](02-voice-ai-assistant/assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
 
 #### Sprach-KI-Assistent mit Echtzeit-Spracherkennung, blitzschneller Groq-Inferenz, natürlicher Sprachsynthese und herunterladbaren Audio-Antworten.
 

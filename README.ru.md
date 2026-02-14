@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 1/15 проектов · скоро будут новые</sup>
+# 🌟 AI Engineering Hub <sup>✨ 2/15 проекта · скоро будут новые</sup>
 
 <div align="center">
 
@@ -80,7 +80,7 @@
 
 
 ### 🤖 [2. Голосовой ИИ-ассистент](./02-voice-ai-assistant)  
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](02-voice-ai-assistant/assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
 
 #### Голосовой ИИ-ассистент с распознаванием речи в реальном времени, сверхбыстрым выводом Groq, естественным синтезом голоса и возможностью загрузки аудиоответов.
 

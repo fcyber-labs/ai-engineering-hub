@@ -70,16 +70,18 @@
 
 <div align="center">
   
-[![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
-[![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
-[![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
-[![ZH](https://img.shields.io/badge/ZH-中文-yellow)](README.zh.md)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Difficulty](https://img.shields.io/badge/Difficulty-Advanced-red)
+![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-purple)
+![Hybrid Search](https://img.shields.io/badge/Hybrid_Search-%E2%9C%93-blue)
+![Self Correction](https://img.shields.io/badge/Self_Correction-%E2%9C%93-orange)
+
 
 </div>
 
 
 ### 🤖 [2.  语音AI助手](./02-voice-ai-assistant)  
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](02-voice-ai-assistant/assets/project_2.gif) [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fcyber101-voice-ai-assistant.streamlit.app/)
 
 #### 具备实时语音识别、超快Groq推理、自然语音合成和可下载音频回复功能的语音AI助手。
 

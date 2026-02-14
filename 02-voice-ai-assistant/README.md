@@ -1,11 +1,4 @@
-<div align="center">
-  
-[![EN](https://img.shields.io/badge/EN-English-blue)](README.md)
-[![DE](https://img.shields.io/badge/DE-Deutsch-black)](README.de.md)
-[![RU](https://img.shields.io/badge/RU-Русский-orange)](README.ru.md)
-[![ZH](https://img.shields.io/badge/ZH-中文-yellow)](README.zh.md)
 
-</div>
 
 
 ### 🤖 2.  Voice AI Assistant
