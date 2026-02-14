@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Agentic RAG Assistant Demo](01-agentic-rag-assistant/media/gif_3.gif)
+![Agentic RAG Assistant Demo](01-agentic-rag-assistant/assets/gif_3.gif)
 
 </div>
 
@@ -65,7 +65,7 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 ## 📂 Vorgestellte KI-Projekte
 
 ### 👨‍💼 [1. Agentischer RAG-Assistent](./01-agentic-rag-assistant)    
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/media/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/assets/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
 #### Intelligenter Frage-Antwort-Assistent mit intelligentem Routing, Anfragenverfeinerung, Halluzinationsprüfung und Selbstkorrekturschleifen.
 

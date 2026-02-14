@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Agentic RAG Assistant Demo](01-agentic-rag-assistant/media/gif_3.gif)
+![Agentic RAG Assistant Demo](01-agentic-rag-assistant/assets/gif_3.gif)
 
 </div>
 <div align="center">
@@ -65,7 +65,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 
 ### 👨‍💼 [1. Agentic RAG Assistant](./01-agentic-rag-assistant)    
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/media/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/assets/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
 #### Smart Q&A Assistant with intelligent routing, query refinement, hallucination checking, and self-correction loops.
 

@@ -1,0 +1,48 @@
+# Version control
+.git
+.gitignore
+.github
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.coverage
+htmlcov
+*.egg-info
+
+# Virtual environment
+venv
+env
+.venv
+ENV
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Local data
+/tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Tests
+tests/
+test_*.py

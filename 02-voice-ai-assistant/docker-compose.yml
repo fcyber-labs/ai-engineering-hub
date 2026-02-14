@@ -1,0 +1,19 @@
+#version: '3.8'
+
+services:
+  voice-ai-assistant:
+    image: fcyber/voice-ai-assistant:latest
+    container_name: voice-ai-assistant-prod
+    ports:
+      - "8501:8501"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

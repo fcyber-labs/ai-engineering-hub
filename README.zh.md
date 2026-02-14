@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Agentic RAG Assistant Demo](01-agentic-rag-assistant/media/gif_3.gif)
+![Agentic RAG Assistant Demo](01-agentic-rag-assistant/assets/gif_3.gif)
 
 </div>
 
@@ -64,7 +64,7 @@
 ## 📂 精选AI项目
 
 ### 👨‍💼 [1. 代理型RAG助手](./01-agentic-rag-assistant)   
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/media/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](01-agentic-rag-assistant/assets/project_1.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/agentic_rag)
 
 #### 智能问答助手，具备智能路由、查询优化、幻觉检测和自我修正循环功能。
 
