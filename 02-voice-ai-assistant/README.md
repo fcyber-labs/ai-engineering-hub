@@ -54,7 +54,7 @@
 |--------|---------|------|----------|
 | **Python** | `pip install -r requirements.txt && python app.py` | 2-5 min | Python 3.9+ |
 | **Docker** | `docker-compose up -d` | 30 sec | Docker + Compose |
-| **Hugging Face** | [![Live App](https://img.shields.io/badge/🚀-Live%20Demo-blue)](https://fcyber101-voice-ai-assistant.streamlit.app/) | 1 sec | Web browser |
+| **Streamlit** | [![Live App](https://img.shields.io/badge/🚀-Live%20Demo-blue)](https://fcyber101-voice-ai-assistant.streamlit.app/) | 1 sec | Web browser |
 
 
 ### 📦 Option 1: Python (Local Setup)

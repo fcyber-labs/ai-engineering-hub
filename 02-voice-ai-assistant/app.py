@@ -40,7 +40,25 @@ with st.sidebar:
     st.header("Configuration")
     
     # API Key
-    groq_api_key = st.sidebar.text_input("GROQ API Key 🔑 ", type="password")
+    api_key = st.text_input(
+        "GROQ API Key 🔑", 
+        type="password",
+        value=st.session_state.get("api_key", "")
+    )
+    
+    # Validate API key
+    if api_key:
+        st.session_state.api_key = api_key
+        if api_key.startswith("gsk_"):
+            st.session_state.api_key_valid = True
+            st.success("✅ API key ready", icon="🔑")
+        else:
+            st.session_state.api_key_valid = False
+            st.warning("⚠️ API key should start with 'gsk_'")
+    else:
+        st.session_state.api_key_valid = False
+        st.info("👆 Enter your GROQ API key to begin")
+    
     # Model selection
     model_option = st.selectbox(
         "Select LLM Model",
