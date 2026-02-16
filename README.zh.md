@@ -212,7 +212,7 @@ python app.py  # Gradio应用通过python运行
 
 我写了一篇与此项目相关的文章：  
 - [Why Integrating Apple’s Ecosystem into a Local RAG Project Is Harder Than It Looks](https://medium.com/@fcyber/why-integrating-apples-ecosystem-into-a-local-rag-project-is-harder-than-it-looks-3949f9f03131)  
-本文探讨了将 Apple 的 CLaRa-7B-Instruct 集成到本地 RAG 系统时遇到的挑战。
+本文探讨了将 Apple 的 CLaRa-7B-Instruct 集成到本地 RAG 系统时所面临的实际挑战。尽管该模型在压缩能力和推理能力方面表现出色，但在本地运行时会带来显著的硬件、架构和部署复杂性。本文将分析具体的困难之处，以及我在这一过程中获得的经验与教训。
 
 ---
 

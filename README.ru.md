@@ -218,7 +218,7 @@ python app.py  # Gradio-приложения запускаются с python
 
 Я написал статью, связанную с этим проектом:  
 - [Why Integrating Apple’s Ecosystem into a Local RAG Project Is Harder Than It Looks](https://medium.com/@fcyber/why-integrating-apples-ecosystem-into-a-local-rag-project-is-harder-than-it-looks-3949f9f03131)  
-В этой статье рассматриваются проблемы интеграции Apple CLaRa-7B-Instruct в локальную RAG-систему.
+Эта статья рассматривает реальные сложности интеграции CLaRa-7B-Instruct от Apple в локальную RAG-систему. Хотя модель демонстрирует впечатляющие возможности сжатия и логического вывода, её локальный запуск связан со значительными аппаратными, архитектурными и инфраструктурными сложностями. Я подробно разбираю, что именно вызвало трудности и какие выводы я сделал в процессе работы.
 
 ---
 
