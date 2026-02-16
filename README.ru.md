@@ -211,6 +211,18 @@ pip install huggingface-hub
 huggingface-cli download fcyber/agentic-rag-assistant
 python app.py  # Gradio-приложения запускаются с python
 ```
+
+---
+
+## 📝 Статья
+
+**Русский**  
+Я написал статью, связанную с этим проектом:  
+[Why Integrating Apple’s Ecosystem into a Local RAG Project Is Harder Than It Looks](https://medium.com/@fcyber/why-integrating-apples-ecosystem-into-a-local-rag-project-is-harder-than-it-looks-3949f9f03131)  
+В этой статье рассматриваются проблемы интеграции Apple CLaRa-7B-Instruct в локальную RAG-систему.
+
+---
+
 ## 🛠️ Технологический стек
 
 | Категория | Технологии |
