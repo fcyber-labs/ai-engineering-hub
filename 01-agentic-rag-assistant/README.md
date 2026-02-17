@@ -38,7 +38,7 @@
 
 <div align="center">
 
-![Agentischer RAG-Workflow](assets/workflow.jpeg)
+![Agentischer RAG-Workflow](assets/workflow.gif)
 
 </div>
 
