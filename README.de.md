@@ -99,7 +99,7 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 </div>
 
 ### 🎧 [3. AI News Podcast Generator – KI TÄGLICHER DIGEST](./03-ai-podcast-generator)
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](03-ai-podcast-generator/assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
 
 #### Der AI Podcast Generator verwandelt die wichtigsten KI-Nachrichten automatisch in vollständig produzierte Podcast-Episoden. Geben Sie einfach die URLs von KI-Nachrichtenquellen ein, und die App durchsucht, fasst zusammen und wandelt die Inhalte in ein professionelles Podcast-Skript mit herunterladbarer MP3-Audiodatei um.
 

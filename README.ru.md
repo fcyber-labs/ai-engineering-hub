@@ -98,7 +98,7 @@
 </div>
 
 ### 🎧 [3.  AI News Podcast Generator – ЕЖЕДНЕВНЫЙ ИИ ДАЙДЖЕСТ](./03-ai-podcast-generator)
-[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](03-ai-podcast-generator/assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
 
 #### AI Podcast Generator автоматически превращает главные новости об искусственном интеллекте в полностью готовые подкаст-эпизоды. Просто введите URL-адреса источников новостей об ИИ, и приложение соберёт данные, создаст краткое содержание и преобразует материал в профессиональный сценарий подкаста с возможностью скачивания MP3-аудио.
 
