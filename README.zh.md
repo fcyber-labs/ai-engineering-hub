@@ -97,6 +97,24 @@
 ![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
 
 </div>
+
+### 🎧 [3.  AI 新闻播客生成器 – AI 每日速递](./03-ai-podcast-generator)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
+
+#### AI Podcast Generator 可自动将热门 AI 新闻头条转换为完整制作的播客节目。只需输入 AI 新闻来源的 URL，应用程序即可抓取内容、生成摘要，并将其转换为专业的播客脚本，同时提供可下载的 MP3 音频文件。
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+
+</div>
+
+
 ---
 
 ### 🚧 更多项目即将推出

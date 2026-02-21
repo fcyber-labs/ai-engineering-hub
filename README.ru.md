@@ -96,6 +96,23 @@
 ![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
 
 </div>
+
+### 🎧 [3.  AI News Podcast Generator – ЕЖЕДНЕВНЫЙ ИИ ДАЙДЖЕСТ](./03-ai-podcast-generator)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
+
+#### AI Podcast Generator автоматически превращает главные новости об искусственном интеллекте в полностью готовые подкаст-эпизоды. Просто введите URL-адреса источников новостей об ИИ, и приложение соберёт данные, создаст краткое содержание и преобразует материал в профессиональный сценарий подкаста с возможностью скачивания MP3-аудио.
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+
+</div>
+
 ---
 
 ### 🚧 Другие проекты скоро

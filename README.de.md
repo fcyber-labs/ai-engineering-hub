@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 2/15 Projekte · weitere folgen</sup>
+# 🌟 AI Engineering Hub <sup>✨ 3/15 Projekte · weitere folgen</sup>
 
 <div align="center">
 
@@ -97,6 +97,23 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 ![Multi-language](https://img.shields.io/badge/Multi--language-%E2%9C%93-orange)
 
 </div>
+
+### 🎧 [3. AI News Podcast Generator – KI TÄGLICHER DIGEST](./03-ai-podcast-generator)
+[![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
+
+#### Der AI Podcast Generator verwandelt die wichtigsten KI-Nachrichten automatisch in vollständig produzierte Podcast-Episoden. Geben Sie einfach die URLs von KI-Nachrichtenquellen ein, und die App durchsucht, fasst zusammen und wandelt die Inhalte in ein professionelles Podcast-Skript mit herunterladbarer MP3-Audiodatei um.
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Groq](https://img.shields.io/badge/Groq-%E2%9C%93-purple)
+![LangGraph](https://img.shields.io/badge/LangGraph-%E2%9C%93-blue)
+![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
+![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+
+</div>
+
 ---
 
 ### 🚧 Weitere Projekte in Kürze
