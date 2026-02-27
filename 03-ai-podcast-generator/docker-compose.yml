@@ -1,11 +1,27 @@
-#version: '3.8'
-
+# version: '3.8'  
 services:
   podcast-app:
-    image: fcyber/ai-podcast:latest
+    image: fcyber/ai-podcast-app:latest
     container_name: ai-podcast
     ports:
-      - "8000:8000"
+      - "8501:8501"
     volumes:
+
       - ./output:/app/output
+      
+      - huggingface-models:/root/.cache/huggingface
+      
+      - pip-cache:/root/.cache/pip
+      
+    environment:
+      - HF_HOME=/root/.cache/huggingface
+      - TRANSFORMERS_CACHE=/root/.cache/huggingface
+      
     restart: unless-stopped
+
+
+volumes:
+  huggingface-models:
+    name: ai-podcast-hf-models
+  pip-cache:
+    name: ai-podcast-pip-cache

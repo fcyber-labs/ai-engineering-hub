@@ -27,6 +27,7 @@
 | **📊 Top-10 Article Selection** | Automatically selects and prioritizes the most relevant AI news articles based on intelligent scoring algorithms. |
 | **💾 File Export Options** | Download both the podcast script (.txt) and generated audio (.mp3) for sharing and archiving. |
 | **⚡ Groq Acceleration** | Ultra-fast LLM inference powered by Groq's LPU technology for real-time processing and summarization. |
+| **📝 BART Large CNN** | Facebook's BART Large CNN model generates high-quality, abstractive summaries by understanding context and rephrasing content naturally, perfect for condensing long-form content into digestible podcast scripts. |
 
 ---
 
@@ -44,7 +45,7 @@
 
 | Method | Command | Time | Requires |
 |--------|---------|------|----------|
-| **Python** | `pip install -r requirements.txt && python app.py` | 2-5 min | Python 3.9+ |
+| **Python** | `pip install -r requirements.txt && streamlit run streamlit_app.py` | 2-5 min | Python 3.9+ |
 | **Docker** | `docker-compose up -d` | 30 sec | Docker + Compose |
 | **Hugging Face** | [![Hugging Face](https://img.shields.io/badge/🤗%20Live%20Demo-FFD21E?style=flat-square)](https://huggingface.co/spaces/fcyber/ai-podcast) | 1 sec | Web browser |
 
@@ -64,6 +65,10 @@
 3. **Install the required dependencies**
    ```bash
    pip install -r requirements.txt
+   ```
+4. **Run streamlit apps**
+   ```bash
+   streamlit run streamlit_app.py
    ```
 
 #### Follow the project-specific instructions in each project's `README.md` file to set up and run the app.
@@ -101,7 +106,7 @@ docker-compose logs -f
 
 6. **Open in browser**
 ```bash
-http://localhost:8000
+http://localhost:8501
 ```
 
 
@@ -123,5 +128,5 @@ docker-compose down
 # Or clone and run locally:
 pip install huggingface-hub
 huggingface-cli download fcyber/ai-podcast
-python app.py  # Gradio apps run with python
+python streamlit run streamlit_app.py  # Gradio apps run with python
 ```

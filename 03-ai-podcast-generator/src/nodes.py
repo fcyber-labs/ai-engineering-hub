@@ -8,11 +8,11 @@ from gtts import gTTS
 from datetime import datetime
 from bs4 import BeautifulSoup
 import re
-
+import os
 
 from io import BytesIO
 import html
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Literal
 from typing_extensions import TypedDict, Annotated
 
 
@@ -20,22 +20,29 @@ from .api_client import init_clients
 
 
 from .state import AgentState
+import streamlit as st
+
+from transformers import pipeline
+import torch
+
+
+
 
 
 def scrape_sites(url: str) -> List[dict]:
-    """Scrape blocked sites and save results as dict with title and link"""
+    """Scrape blocked sites and save results"""
     save_date = time.strftime("%Y_%m_%d")
-    results = []  # This will store our dicts
+    results = [] 
     
     try:
         scraper = cloudscraper.create_scraper()
-        print(f"🚀 Bypassing protection for: {url}")
+
         response = scraper.get(url, timeout=15)
         
         if response.status_code == 200:
             import re
             links = re.findall(r'<a[^>]*href="([^"]*)"[^>]*>([^<]*)</a>', response.text)
-            print(f"✅ Success! Found {len(links)} total links")
+
             
             for href, text in links:
                 text = text.strip()
@@ -46,8 +53,9 @@ def scrape_sites(url: str) -> List[dict]:
                     not text.isdigit() and
                     any(char.isalpha() for char in text)):
                     
-                    text = html.unescape(text) 
-
+                    #+++++++++++++
+                    text = html.unescape(text)
+                    #+++++++++++++
 
 
                     # Make URL absolute
@@ -67,7 +75,7 @@ def scrape_sites(url: str) -> List[dict]:
                         'source': url
                     })
             
-            print(f"📊 Found {len(results)} meaningful headlines")
+            print(f"Found {len(results)} meaningful headlines")
             return results
             
         else:
@@ -85,16 +93,15 @@ def scrape_sites(url: str) -> List[dict]:
 
 
 
-
-
 def smart_rate_titles(articles: List[dict], llm) -> List[dict]:
     """Use LLM with structured output to rate titles"""
 
-    
     rated_articles = []
-    
+
+
+        
     # Rate each article
-    for i, article in enumerate(articles[:1000]):  
+    for i, article in enumerate(articles[:1000]): 
         prompt = f"""You are an expert AI-news curator. Rate how central this headline is to **current artificial intelligence and machine learning news** on a 0–100 scale.
 
         Title: {article['title']}
@@ -120,11 +127,11 @@ def smart_rate_titles(articles: List[dict], llm) -> List[dict]:
         except Exception as e:
             print(f"  ❌ Failed: {e}")
             article['llm_score'] = 0
-            rated_articles.append(article) 
+            rated_articles.append(article)
     
-    # 🎯 SORT AND **RETURN**
+    # Sort and return
     rated_articles.sort(key=lambda x: x['llm_score'], reverse=True)
-    return rated_articles[:20]
+    return rated_articles[:20]  
 
 
 
@@ -135,12 +142,12 @@ def smart_rate_titles(articles: List[dict], llm) -> List[dict]:
 
 
 
+def scraper_rate_node(state: AgentState) -> AgentState:
+    """Scrape and create ratings"""
 
 
 
-def scraper_rate_node(state: AgentState, llm) -> AgentState:
-    """Fixed version - removes duplicate URLs before rating"""
-    
+    llm = state.get("llm")
     urls_to_scrape = state.get("urls", [])
     
     all_articles = []
@@ -149,12 +156,12 @@ def scraper_rate_node(state: AgentState, llm) -> AgentState:
         if articles:
             all_articles.extend(articles)
 
-#            # Save to JSON (optional)
+#            # Save to JSON - optional, uncomment
 #            with open('scraped_results.json', 'a', encoding='utf-8') as f:
 #                # Save each article individually
 #                for article in articles:
 #                    json.dump(article, f, ensure_ascii=False)
-#                    f.write('\n')  # Newline after each article
+#                    f.write('\n') 
 #            print(f"💾 Saved {len(articles)} articles from {url}")
     
     if not all_articles:
@@ -165,7 +172,7 @@ def scraper_rate_node(state: AgentState, llm) -> AgentState:
             "route": "content_extractor_node"
         }
     
-    # REMOVE DUPLICATES BEFORE RATING
+    #  REMOVE DUPLICATES 
     unique_articles = {}
     for article in all_articles:
         url = article.get('link')
@@ -179,13 +186,14 @@ def scraper_rate_node(state: AgentState, llm) -> AgentState:
     print(f"📊 Found {len(all_articles)} articles, {len(unique_list)} unique")
     
     # Rate unique articles
+
     top_articles = smart_rate_titles(articles=unique_list, llm=llm)
     
-    # Format - ensure no duplicates
+    # Format 
     output = []
     seen_urls = set()
     
-    for article in top_articles[:10]:  # top articles !!!
+    for article in top_articles[:10]:  # top articles
         url = article.get('link')
         if url and url not in seen_urls:
             seen_urls.add(url)
@@ -211,7 +219,7 @@ def scraper_rate_node(state: AgentState, llm) -> AgentState:
 
 
 def extract_article_content(url: str) -> Dict[str, Any]:
-    """Extract content ONLY, no title needed!"""
+    """Extract content without title"""
     
     try:
         scraper = cloudscraper.create_scraper()
@@ -235,7 +243,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
             'article',
             '.post', '.post-content', '.article-content',
             '.published-content', '.body', '.content',
-            '[data-testid="post-content"]',  
+            '[data-testid="post-content"]', 
             'div[class*="post"]', 'div[class*="article"]',
             'main', 'main div', 'main article'
         ]
@@ -250,7 +258,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
                 text = re.sub(r'\n\s*\n+', '\n\n', text)
                 
                 # Check for real article content
-                if (len(text) > 800 and  # Substantial
+                if (len(text) > 800 and 
                     len(text.split('\n')) > 10 and  
                     not any(word in text.lower() for word in ['subscribe', 'home', 'sign in', 'notes']) and
                     sum(1 for c in text if c.isalpha()) > 500): 
@@ -259,7 +267,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
                         content_text = text
                         best_selector = selector
         
-        # Fallback: Get all paragraphs and filter
+        # Get all paragraphs and filter
         if not content_text:
             paragraphs = soup.find_all(['p', 'div'])
             good_paragraphs = []
@@ -268,7 +276,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
                 text = p.get_text(strip=True)
                 # Filter: meaningful paragraphs only
                 if (len(text) > 150 and
-                    sum(1 for c in text if c.isalpha()) > 100 and  # Enough letters
+                    sum(1 for c in text if c.isalpha()) > 100 and  
                     not any(word in text.lower() for word in ['subscribe', 'home', 'menu'])):
                     
                     # Check parent isn't navigation
@@ -288,7 +296,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
                 "full_text": content_text[:20000],
                 "char_count": len(content_text),
                 "method": f"article_page: {best_selector}",
-                "url": url  # Keep original URL for reference
+                "url": url 
             }
         
         return {"success": False, "error": "No article content found"}
@@ -300,7 +308,7 @@ def extract_article_content(url: str) -> Dict[str, Any]:
 
 
 def content_extractor_node(state: Dict[str, Any]) -> Dict[str, Any]:
-    """Node that extracts full content - HANDLES DUPLICATES"""
+    """Node that extracts full content"""
     
     top_articles = state.get("top_20_articles", [])
     
@@ -330,7 +338,7 @@ def content_extractor_node(state: Dict[str, Any]) -> Dict[str, Any]:
         
         if result.get("success"):
             full_article = {
-                "llm_score": article.get("rate", 0),
+                "llm_score": article.get("rate", 0),  
                 "title": article_title,
                 "url": url,
                 "full_text": result["full_text"][:10000],
@@ -375,14 +383,27 @@ def content_extractor_node(state: Dict[str, Any]) -> Dict[str, Any]:
 
 
 
+def summary_router(state) -> Literal["summarize_bart_node", "summarizer_node"]:
+    """
+    Router - directs to BART or API summarizer
+    """
+    method = state.get("summary_method", "api")
+    
+    if method == "api":
+        return "summarizer_node"
+    return "summarize_bart_node"
+
+
 
 
 
 
 
 def summarize_article_checker(full_articles: List[Dict[str, Any]], llm) -> List[Dict[str, Any]]:
-    """LLM agent: Check content quality and create 200-word summaries - FIXED"""
+    """LLM checks content quality and create 200-word summaries"""
     
+
+
     if not full_articles:
         return []
     
@@ -413,7 +434,7 @@ def summarize_article_checker(full_articles: List[Dict[str, Any]], llm) -> List[
         full_text = article.get("full_text", "")
         rating = article.get("rating", article.get("llm_score", 0)) 
         
-        # Check quality and summarize in one go
+        # Check quality and summarize
         prompt = f"""
         TASK: Analyze this article and create a high-quality summary.
         
@@ -445,12 +466,12 @@ def summarize_article_checker(full_articles: List[Dict[str, Any]], llm) -> List[
             if "QUALITY: Yes" in response_text or "quality: yes" in response_text.lower():
                 quality = "Yes"
             
-            # Extract summary 
+            # Extract summary
             summary_match = re.search(r'SUMMARY:\s*(.+)', response_text, re.DOTALL)
             if summary_match:
                 summary = summary_match.group(1).strip()
             else:
-                # take everything after QUALITY line
+                # Take everything after quality line
                 lines = response_text.split('\n')
                 in_summary = False
                 summary_lines = []
@@ -469,7 +490,7 @@ def summarize_article_checker(full_articles: List[Dict[str, Any]], llm) -> List[
             
             # Ensure 200 words
             if word_count > 200:
-                # Trim to 200 words
+                # Trim to ~200 words
                 words = summary.split()[:200]
                 summary = ' '.join(words)
                 word_count = 200
@@ -500,9 +521,11 @@ def summarize_article_checker(full_articles: List[Dict[str, Any]], llm) -> List[
 
 
 
-def summarizer_node(state: Dict[str, Any], llm) -> Dict[str, Any]:
+def summarizer_node(state: Dict[str, Any]) -> Dict[str, Any]:
     """Node: Summarize articles and check quality"""
-    
+
+
+    llm = state.get("llm")
     # Get articles from previous node
     full_articles = state.get("full_articles", [])
     
@@ -518,8 +541,8 @@ def summarizer_node(state: Dict[str, Any], llm) -> Dict[str, Any]:
     print(f"📝 SUMMARIZER NODE: Processing {len(full_articles)} articles")
     print("=" * 70)
     
-    #  Call the summarizer agent
-    summarized_articles = summarize_article_checker(full_articles, llm=llm)
+    # Call the summarizer agent
+    summarized_articles = summarize_article_checker(full_articles, llm)
     
     # Calculate statistics
     successful = [a for a in summarized_articles if a.get("summary_status") == "success"]
@@ -536,7 +559,7 @@ def summarizer_node(state: Dict[str, Any], llm) -> Dict[str, Any]:
     # Show sample summaries
     if successful:
         print(f"\n✅ SUCCESSFUL SUMMARIES ({len(successful)} articles):")
-        for i, article in enumerate(successful[:2], 1):  # Show first 2
+        for i, article in enumerate(successful[:2], 1): 
             print(f"\n{i}. 📰 {article.get('title', 'Untitled')[:50]}...")
             print(f"   ⭐ Rating: {article.get('rating', 0)}/100")
             print(f"   📊 Quality: {article.get('quality_check', 'Unknown')}")
@@ -556,15 +579,146 @@ def summarizer_node(state: Dict[str, Any], llm) -> Dict[str, Any]:
 
 
 
-def create_podcast_intro(top_articles, llm):
-    """
-    Creates podcast intro using ONLY titles and ratings
-    Token-efficient: ~1 LLM call
-    """
+
+
+
+# ------------------------------------------------------
+
+
+
+# # Load model once 
+# @st.cache_resource  
+# def load_bart_summarizer():
+#     """Load BART summarization pipeline"""
+#     return pipeline(
+#         "summarization", 
+#         # model="./models/bart-large-cnn-ct2",  # LOCAL FOLDER PATH
+#         # tokenizer="./models/bart-large-cnn-ct2",  # LOCAL FOLDER PATH
+#         model="/app/models/bart-large-cnn-ct2",  # FOR DOCKER
+#         tokenizer="/app/models/bart-large-cnn-ct2",
+#         device=0 if torch.cuda.is_available() else -1
+#     )
+
+
+# Load model once - downloads to cache on first use
+@st.cache_resource  
+def load_bart_summarizer():
+    """Load BART summarization pipeline (downloads to cache on first use)"""
+    from transformers import pipeline
+    import torch
     
+    print("📥 Loading BART model (first time may download to cache)...")
+    
+    return pipeline(
+        "summarization", 
+        model="facebook/bart-large-cnn",  # HF model name, not local path
+        device=0 if torch.cuda.is_available() else -1
+    )
+
+    
+
+def summarize_bart_node(state: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    LangGraph node to summarize articles using BART (better than BART)
+    """
+    full_articles = state.get("full_articles", [])
+    # Load the summarizer
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, "..", "models", "bart-large-cnn-ct2")
+    summarizer = load_bart_summarizer()
+    
+    if not full_articles:
+        return {
+            **state,
+            "summarized_articles": [],
+            "summary_stats": {"total": 0, "success": 0, "failed": 0},
+            "messages": [*state.get("messages", []), "⚠️ No articles to summarize"]
+        }
+    
+    summarized_articles = []
+    success = 0
+    
+    for article in full_articles:
+        text = article.get("full_text", "")
+        
+        # Skip if no content
+        if not text or len(text) < 100:
+            article["summary"] = ""
+            article["summary_status"] = "failed"
+            article["word_count"] = 0
+            summarized_articles.append(article)
+            continue
+        
+        try:
+
+            if len(text) > 3000:
+                text = text[:3000]
+            
+            # Generate summary with BART
+            result = summarizer(
+                text,
+                max_new_tokens=150,      
+                min_new_tokens=100,       
+                do_sample=False,
+                truncation=True
+            )
+            
+            summary = result[0]['summary_text']
+            word_count = len(summary.split())
+            
+            # Add to article
+            article["summary"] = summary
+            article["summary_status"] = "success"
+            article["word_count"] = word_count
+            article["quality_check"] = "BART-large-CNN"
+            summarized_articles.append(article)
+            success += 1
+            
+            print(f"  ✅ BART summary created ({word_count} words)")
+            
+        except Exception as e:
+            print(f"  ❌ BART failed: {e}")
+            article["summary"] = ""
+            article["summary_status"] = "failed"
+            article["word_count"] = 0
+            summarized_articles.append(article)
+    
+    # Calculate statistics
+    successful = [a for a in summarized_articles if a.get("summary_status") == "success"]
+    stats = {
+        "total_articles": len(full_articles),
+        "successfully_summarized": len(successful),
+        "failed": len(full_articles) - len(successful),
+        "success_rate": f"{(len(successful)/len(full_articles))*100:.1f}%",
+        "average_word_count": sum(a.get("word_count", 0) for a in successful) / max(len(successful), 1)
+    }
+    
+    return {
+        **state,
+        "summarized_articles": summarized_articles,
+        "summary_stats": stats,
+        "messages": [
+            *state.get("messages", []),
+            f"✅ BART Summarized {len(successful)}/{len(full_articles)} articles"
+        ]
+    }
+
+
+
+
+
+
+
+# ------------------------------------------------------
+
+def create_podcast_intro(articles, llm, tone="neutral"):
+    """
+    Creates podcast intro using only titles and ratings
+    """
+
     # Prepare minimal data for LLM
     news_items = []
-    for i, article in enumerate(top_articles[:3], 1):  # Top 3 for intro !!!
+    for i, article in enumerate(articles[:3], 1):  # Top 3 for intro
         title = article.get("title", "")
         rating = article.get("llm_score", 0) or article.get("rating", 0)
         news_items.append(f"{i}. {title} (Relevance: {rating}/100)")
@@ -592,13 +746,10 @@ Podcast Intro:"""
 
 
 def create_podcast_transitions(top_articles, llm):
-    """
-    Creates transitions between news items using ONLY titles
-    Token-efficient: ~1 LLM call for all transitions
-    """
+    """Creates transitions between news items using only titles"""
+
     
     titles = [article.get("title", "") for article in top_articles]
-    
     prompt = f"""Create natural podcast transitions between these news segments.
     
 News Titles (in order):
@@ -619,7 +770,7 @@ Transitions:"""
         transitions_text = response.content.strip()
         transitions = []
         
-        # Simple parsing
+        # Simple parsing - split by numbered items
         lines = transitions_text.split('\n')
         for line in lines:
             line = line.strip()
@@ -631,7 +782,7 @@ Transitions:"""
         while len(transitions) < len(titles) - 1:
             transitions.append("Moving on to our next story...")
         
-        return transitions[:len(titles)-1]  # N-1 transitions for N articles
+        return transitions[:len(titles)-1] 
         
     except Exception as e:
         print(f"❌ Transition creation failed: {e}")
@@ -644,11 +795,11 @@ def build_podcast_script(intro, articles, transitions):
     
     script_parts = ["AI DAILY DIGEST - PODCAST SCRIPT", "", intro, ""]
     
-    # 2. News Items - FILTER for articles with actual summaries
+    # filter for articles with actual summaries
     for i, article in enumerate(articles):
         # Skip articles without proper summaries
         summary = article.get('summary', '').strip()
-        if not summary:  # Skip empty summaries
+        if not summary: 
             continue
             
         # Add article
@@ -661,12 +812,12 @@ def build_podcast_script(intro, articles, transitions):
         # Add transition if not last article and next article has summary
         if i < len(articles) - 1:
             next_summary = articles[i + 1].get('summary', '').strip()
-            if next_summary:  # Only add transition if next article is valid
+            if next_summary:
                 script_parts.append("")
                 script_parts.append(f"{transitions[i] if i < len(transitions) else 'Moving on...'}")
     
-    # 3. Outro
-    if len(script_parts) > 4:  # Only add outro if we added stories
+    # Outro
+    if len(script_parts) > 4:  
         script_parts.append("\n=")
         script_parts.append("Thanks for listening to AI Daily Digest!")
         script_parts.append("Stay tuned for more AI news updates.")
@@ -676,12 +827,17 @@ def build_podcast_script(intro, articles, transitions):
 
 
 
-def podcast_script_writer_node(state, llm):
+def podcast_script_writer_node(state):
     """
     Creates podcast script: Intro + News Blocks + Transitions
-    Uses minimal tokens by processing only necessary data
     """
-    
+
+
+    top_articles = state.get("summarized_articles", [])
+    llm = state.get("llm")
+    tone = state.get("tone", "neutral")
+
+
     print("\n" + "="*70)
     print("🎙️  PODCAST SCRIPT WRITER: Creating engaging podcast")
     print("="*70)
@@ -703,7 +859,7 @@ def podcast_script_writer_node(state, llm):
             "messages": state.get("messages", []) + ["Podcast: No input articles."]
         }
     
-    # STEP 1: Select Top 10 Articles (by rating)
+    #  Select Top 10 Articles (by rating)
     successful_articles = [a for a in summarized_articles if a.get("summary_status") == "success"]
     print(f"📊 Found {len(successful_articles)} successful summaries out of {len(summarized_articles)} total")
     
@@ -714,27 +870,27 @@ def podcast_script_writer_node(state, llm):
     # Simple scoring - llm_score first, rating fallback
     top_articles = sorted(
         successful_articles,
-        key=lambda x: x.get("llm_score", x.get("rating", 0)),  
+        key=lambda x: x.get("llm_score", x.get("rating", 0)),
         reverse=True
-    )[:5]  # top articles !!!
+    )[:5]  #  top articles
     
     print(f"📊 Selected top {len(top_articles)} articles for podcast")
     
-    # STEP 2: Create Podcast Intro (LLM Call #1)
+    # Create Podcast Intro 
     print("\n1️⃣ Creating podcast intro...")
-    intro_text = create_podcast_intro(top_articles, llm)
+    intro_text = create_podcast_intro(top_articles, llm, tone)
     
-    # STEP 3: Create Natural Transitions (LLM Call #2)
+    #  Create Natural Transitions
     print("\n2️⃣ Creating transitions between news items...")
     transitions = create_podcast_transitions(top_articles, llm)
     
-    # STEP 4: Build Final Script
+    #  Build Final Script
     print("\n3️⃣ Building final podcast script...")
     podcast_script = build_podcast_script(intro_text, top_articles, transitions)
     
-    # STEP 5: Calculate total words/time
+    # Calculate total words/time
     total_words = len(podcast_script.split())
-    estimated_minutes = total_words // 150  # 150 words/minute speaking rate // not used
+    estimated_minutes = total_words // 150 # Not used any more
     
     print(f"\n✅ Podcast Script Complete: {total_words} words (~{estimated_minutes} minutes)")
     
@@ -759,7 +915,7 @@ def podcast_script_writer_node(state, llm):
 
 
 
-# SEPARATE FUNCTIONS VERSION
+
 def save_to_txt(podcast_script, filename_prefix="ai_podcast"):
     """Save podcast script to txt file"""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -770,6 +926,8 @@ def save_to_txt(podcast_script, filename_prefix="ai_podcast"):
     
     print(f"📄 Saved: {filename}")
     return filename
+
+
 
 
 def text_to_mp3(
@@ -784,11 +942,11 @@ def text_to_mp3(
     filename = f"{filename_prefix}_{today}.mp3"
     
     # Clean script for speech
-    clean_text = podcast_script  # Limit for gTTS
+    clean_text = podcast_script 
     clean_text = clean_text.replace("[HOST] ", "").replace("[HOST]", "")
     
     tts = gTTS(text=clean_text, lang="en", slow=False)
-    #tts.save(filename) # Removed saving to disk (Optional)
+    #tts.save(filename) #  Saving to disk if needed
 
     # Virtual Part
     mp3_buffer = BytesIO()
@@ -804,11 +962,9 @@ def text_to_mp3(
 
 
 
-# Combined node using separate functions
-
 def save_and_speak_node(state):
     """
-    ✅ Saves podcast script to files AND generates audio
+    Saves podcast script to files and generates audio
     """
     print("\n" + "="*60)
     print("💾 SAVE & SPEAK NODE: Creating files...")
@@ -821,32 +977,33 @@ def save_and_speak_node(state):
         print("❌ No podcast script found!")
         return {
             **state,
+                "saved_files": state.get("saved_files", {}),
+            "audio_buffer": None,
             "messages": state.get("messages", []) + ["❌ No podcast script to save"]
         }
     
-    # SAVE TO TEXT FILE
+    # Save text
     txt_filename = save_to_txt(podcast_script)
     
-    # CREATE MP3 AUDIO
-    mp3_filename, audio_buffer = text_to_mp3(podcast_script) # Get both filename and buffer
+    # Create audio
+    mp3_filename, audio_buffer = text_to_mp3(podcast_script) 
     
-    print("✅ Files created:")
-    print(f"   📄 Text: {txt_filename}")
-    print(f"   🎵 Audio: {mp3_filename}")
+    print(f"✅ Files created")
 
 
-    state["audio_buffer"] = audio_buffer
     return {
-        **state,
+        **state,  
         "saved_files": {
             "txt_file": txt_filename,
             "mp3_file": mp3_filename,
             "script_length": len(podcast_script)
         },
+        "audio_buffer": audio_buffer,  
         "messages": state.get("messages", []) + [
             f"✅ Saved podcast script ({len(podcast_script)} chars)",
-            "✅ Created audio file"
+            f"✅ Created audio file"
         ]
     }
+
 
 
