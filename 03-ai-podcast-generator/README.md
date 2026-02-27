@@ -14,6 +14,8 @@
 ![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
 ![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+![BART Model](https://img.shields.io/badge/BART%20Model-%F0%9F%A4%97-blue)
+![Advanced Level](https://img.shields.io/badge/Level-Advanced-purple)
 
 </div>
 
