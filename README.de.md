@@ -101,7 +101,7 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 ### 🎧 [3. AI News Podcast Generator – KI TÄGLICHER DIGEST](./03-ai-podcast-generator)
 [![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](03-ai-podcast-generator/assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
 
-#### Der AI Podcast Generator verwandelt die wichtigsten KI-Nachrichten automatisch in vollständig produzierte Podcast-Episoden. Geben Sie einfach die URLs von KI-Nachrichtenquellen ein, und die App durchsucht, fasst zusammen und wandelt die Inhalte in ein professionelles Podcast-Skript mit herunterladbarer MP3-Audiodatei um.
+#### Der AI Podcast Generator verwandelt aktuelle KI-Schlagzeilen automatisch in vollständig produzierte Podcast-Episoden. Geben Sie einfach die URLs von KI-Nachrichtenquellen ein, und die App extrahiert die Inhalte, fasst sie zusammen und erstellt daraus ein professionelles Podcast-Skript mit herunterladbarer MP3-Audiodatei. Wählen Sie Ihre Quelle – entweder die besten KI-Nachrichten aus den Top-50-Websites extrahieren oder angesagte Stories von Hacker News entdecken.
 
 <div align="center">
 
@@ -111,6 +111,8 @@ Dieses Repository enthält LLM-Apps, die Modelle von <strong>OpenAI</strong>, <s
 ![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
 ![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+![BART Model](https://img.shields.io/badge/BART%20Model-%F0%9F%A4%97-blue)
+![Advanced Level](https://img.shields.io/badge/Level-Advanced-purple)
 
 </div>
 

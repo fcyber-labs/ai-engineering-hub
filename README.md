@@ -102,7 +102,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 ### 🎧 [3.  AI News Podcast Generator - AI DAILY DIGEST](./03-ai-podcast-generator)
 [![Demo Video](https://img.shields.io/badge/📺-Watch%20Demo-red)](03-ai-podcast-generator/assets/project3_demo.gif) [![Live App](https://img.shields.io/badge/🤗-Try%20Now-yellow)](https://huggingface.co/spaces/fcyber/ai-podcast)
 
-#### AI Podcast Generator transforms top AI news headlines into fully-produced podcast episodes automatically. Simply enter URLs of AI news sources, and the app scrapes, summarizes, and converts the content into a professional podcast script with downloadable MP3 audio.
+#### AI Podcast Generator transforms top AI news headlines into fully-produced podcast episodes automatically. Simply enter URLs of AI news sources, and the app scrapes, summarizes, and converts the content into a professional podcast script with downloadable MP3 audio. Choose your source - either extract the best AI news from top 50 websites or discover trending stories from HackerNews.
 
 <div align="center">
 
@@ -112,6 +112,8 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 ![gTTS](https://img.shields.io/badge/gTTS-%E2%9C%93-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-%E2%9C%93-red)
 ![Web Scraping](https://img.shields.io/badge/Web%20Scraping-%E2%9C%93-orange)
+![BART Model](https://img.shields.io/badge/BART%20Model-%F0%9F%A4%97-blue)
+![Advanced Level](https://img.shields.io/badge/Level-Advanced-purple)
 
 </div>
 
