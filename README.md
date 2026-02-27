@@ -157,7 +157,7 @@ This repository features LLM apps that use models from <strong>OpenAI</strong>, 
 
 3. **Install the required dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirements.txt && python app.py
    ```
 
 #### Follow the project-specific instructions in each project's `README.md` file to set up and run the app.

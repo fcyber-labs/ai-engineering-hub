@@ -1,4 +1,4 @@
-# 🌟 AI Engineering Hub <sup>✨ 2/15 个项目 · 更多即将推出</sup>
+# 🌟 AI Engineering Hub <sup>✨ 3/15 个项目 · 更多即将推出</sup>
 
 <div align="center">
 
@@ -160,7 +160,7 @@ cd ai-engineering-hub/01-agentic-rag-assistant
 
 3. **安装所需的依赖项**
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt && python app.py`
 ```
 
 #### 请遵循每个项目`README.md`文件中的特定项目说明来设置和运行应用。

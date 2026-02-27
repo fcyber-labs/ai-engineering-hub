@@ -582,22 +582,6 @@ def summarizer_node(state: Dict[str, Any]) -> Dict[str, Any]:
 
 
 
-# ------------------------------------------------------
-
-
-
-# # Load model once 
-# @st.cache_resource  
-# def load_bart_summarizer():
-#     """Load BART summarization pipeline"""
-#     return pipeline(
-#         "summarization", 
-#         # model="./models/bart-large-cnn-ct2",  # LOCAL FOLDER PATH
-#         # tokenizer="./models/bart-large-cnn-ct2",  # LOCAL FOLDER PATH
-#         model="/app/models/bart-large-cnn-ct2",  # FOR DOCKER
-#         tokenizer="/app/models/bart-large-cnn-ct2",
-#         device=0 if torch.cuda.is_available() else -1
-#     )
 
 
 # Load model once - downloads to cache on first use
@@ -611,7 +595,7 @@ def load_bart_summarizer():
     
     return pipeline(
         "summarization", 
-        model="facebook/bart-large-cnn",  # HF model name, not local path
+        model="facebook/bart-large-cnn",  
         device=0 if torch.cuda.is_available() else -1
     )
 
