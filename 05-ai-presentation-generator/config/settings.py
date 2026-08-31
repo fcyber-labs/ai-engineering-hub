@@ -22,5 +22,3 @@ def get_llm(temperature=0.2):
 )
 
 
-####
-
