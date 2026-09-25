@@ -1,6 +1,10 @@
 import gradio as gr
+import os
 import time
 from workflow.main_workflow import graph_app
+from data.embeddings import hybrid_retrieve_func
+
+
 
 class LangGraphChatInterface:
     def __init__(self, graph_app, config=None):
@@ -245,5 +249,10 @@ print("Using complete workflow")
 print("Debug mode: ON")
 
 # Launch
+# Launch
 if __name__ == "__main__":
-    demo.launch(share=True, debug=True)
+    # load the embedding model and build the index now, so the first user does not wait
+    hybrid_retrieve_func("warm up")
+    
+    # no public link unless you ask for it, put GRADIO_SHARE=true in .env
+    demo.launch(share=os.getenv("GRADIO_SHARE", "false").lower() == "true", debug=True)

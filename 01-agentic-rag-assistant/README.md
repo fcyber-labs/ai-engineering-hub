@@ -29,9 +29,9 @@
 | :--- | :--- |
 | **🔀 Intelligent Routing** | Dynamically routes queries to specialized agents based on intent analysis. |
 | **🔍 Query Refinement** | Self-improves queries through reflection and rewriting. |
-| **✅ Hallucination Checking** | Validates responses against source documents with faithfulness scoring. |
+| **✅ Hallucination Checking** | Checks the answer against the source documents and retries when it is not grounded. |
 | **🔄 Self-Correction** | Automatically detects and fixes inadequate responses. |
-| **📊 Hybrid Retrieval** | Combines semantic, keyword, and knowledge graph search. |
+| **📊 Hybrid Retrieval** | Combines semantic (FAISS) and keyword (BM25) search. |
 
 
 ---
@@ -50,7 +50,7 @@
 
 | Method | Command | Time | Requires |
 |--------|---------|------|----------|
-| **Python** | `pip install -r requirements.txt && python app.py` | 2-5 min | Python 3.9+ |
+| **Python** | `pip install -r requirements.txt && python app.py` | 2-5 min | Python 3.10+ |
 | **Docker** | `docker-compose up -d` | 30 sec | Docker + Compose |
 | **Hugging Face** | [![Hugging Face](https://img.shields.io/badge/🤗%20Live%20Demo-FFD21E?style=flat-square)](https://huggingface.co/spaces/fcyber/agentic_rag) | 1 sec | Web browser |
 | **Production** | [![GitLab](https://img.shields.io/badge/GitLab-Production%20(5000)-FC6D26?style=flat-square&logo=gitlab)](http://141.144.205.187:5000) | Instant | Web browser |
@@ -147,6 +147,6 @@ python app.py  # Gradio apps run with python
 </div>
 
 ---
-
+#
 
 

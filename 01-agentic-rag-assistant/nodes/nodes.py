@@ -51,24 +51,25 @@ def node_retrieve(state: GraphState) -> GraphState:
 
 # Option 1: Change grade_retrieval_node to return "bad"
 def grade_retrieval_node(state: GraphState) -> GraphState:
-    """Grade the retrieved documents"""
+    """Grade every retrieved document and keep only the relevant ones"""
     documents = state.get("documents", [])
     question = state.get("question", "")
     
     grader = create_retriever_grader(llm)
     
-    if documents and len(documents) > 0:
-        grade_result = grader.invoke({
-            "document": documents[0].page_content[:500],
-            "question": question
-        })
+    if documents:
+        # one grader call per document, batch runs a few of them side by side
+        grades = grader.batch(
+            [{"document": doc.page_content, "question": question} for doc in documents],
+            config={"max_concurrency": 3}
+        )
+        relevant_docs = [doc for doc, grade in zip(documents, grades) if grade.relevant == "yes"]
         
-        if grade_result.relevant == "yes":
-            return {"retrieval_grade": "good", "route": "good"}  # ← returns "good"
-        else:
-            return {"retrieval_grade": "bad", "route": "bad"}    # ← returns "bad" not "rewrite_query"
+        if relevant_docs:
+            # only these go on to the answer generation
+            return {"documents": relevant_docs, "retrieval_grade": "good", "route": "good"}
     
-    return {"retrieval_grade": "bad", "route": "bad"}  # ← returns "bad"
+    return {"retrieval_grade": "bad", "route": "bad"}
 
 
 #   Node: Generate Answer
@@ -108,30 +109,33 @@ def grade_hallucination_node(state: GraphState) -> GraphState:
     if not generation or len(generation.strip()) < 10:
         return {"hallucination_route": "good"}
     
-    try:
-        hallucination_grader = create_hallucination_grader(llm)
-        
-        # Get context
-        context = "\n".join([doc.page_content for doc in documents[:2]]) if documents else "No docs"
-        
-        result = hallucination_grader.invoke({
-            "documents": context[:300],
-            "generation": generation[:300]
-        })
-        
-        #  very loyal 
-        if result.grounded == "no":
-            # Say no if really bad
-            if "false" in result.reasoning.lower() or "fake" in result.reasoning.lower():
-                print(f"Bad hallucination: {result.reasoning}")
-                return {"hallucination_route": "hallucinated"}
-        
-        return {"hallucination_route": "good"}
-            
-    except Exception as e:
-        print(f"Hallucination skip: {e}")
-        return {"hallucination_route": "good"}
-
+    # all documents and the whole answer, nothing is cut
+    context = "\n\n".join([doc.page_content for doc in documents]) if documents else "No docs"
+    
+    # the llm can fail (rate limit, timeout), so we try twice
+    result = None
+    for attempt in (1, 2):
+        try:
+            hallucination_grader = create_hallucination_grader(llm)
+            result = hallucination_grader.invoke({
+                "documents": context,
+                "generation": generation
+            })
+            break
+        except Exception as e:
+            print(f"Hallucination check failed (try {attempt} of 2): {e}")
+    
+    # could not check it, so don't let it pass quietly, tell the user
+    if result is None:
+        note = "\n\n(I couldn't check this answer against the documents.)"
+        return {"hallucination_route": "good", "generation": generation + note}
+    
+    # trust the grader
+    if result.grounded == "no":
+        print(f"Hallucination: {result.reasoning}")
+        return {"hallucination_route": "hallucinated"}
+    
+    return {"hallucination_route": "good"}
 
 
 

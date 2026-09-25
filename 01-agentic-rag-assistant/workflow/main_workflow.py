@@ -3,7 +3,7 @@
 
 
 from langgraph.graph import StateGraph, END
-from langgraph.checkpoint.memory import MemorySaver
+
 
 from nodes.nodes import route_question_node, node_retrieve, grade_retrieval_node, generate_answer_node, grade_hallucination_node, grade_answer_node, rewrite_query_node, general_chat_node, clarify_node, final_respond_node
 from core.state import GraphState
@@ -81,5 +81,5 @@ workflow.add_edge("general_chat", END)
 workflow.add_edge("clarify", END)
 workflow.add_edge("final_respond", END)
 
-graph_app = workflow.compile(checkpointer=MemorySaver(), debug=True)
+graph_app = workflow.compile(debug=True)
 graph_app

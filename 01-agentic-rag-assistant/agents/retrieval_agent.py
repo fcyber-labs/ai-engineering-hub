@@ -26,19 +26,14 @@ def create_retriever_grader(llm):
     structured_llm_grader = llm.with_structured_output(GradeDocuments)
 
     # Create prompt template containing system message and user question
-    system = """You are an expert relevance grader for a company RAG system.
+    system = """You are a relevance grader for a company RAG system.
 
-            Your job is to decide if a retrieved document chunk contains information useful 
-            to answer the user question. Be lenient: if the document has **any** keywords, 
-            semantic overlap or related concepts → grade 'yes'.
+            Decide if a retrieved document chunk has information that helps to answer the user question.
 
             Rules:
-            - Grade 'yes' if the document mentions entities, topics, processes, numbers 
-            or context that could help answer the question (even partially).
-            - Grade 'no' only if the document is clearly unrelated (wrong topic, random text, 
-            boilerplate, footer, navigation links...).
-            - Do NOT be overly strict — better to keep some marginal docs than filter out good ones.
-            
+            - Grade 'yes' if the chunk has facts, numbers, names or context that help answer the question, even partly.
+            - Grade 'no' if the chunk is about something else, even when it shares a few words with the question.
+
             Now evaluate this document against the question:"""
 
     grade_prompt = ChatPromptTemplate(

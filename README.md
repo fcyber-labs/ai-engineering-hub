@@ -62,11 +62,11 @@ If you're an engineer looking to see how these systems get built in practice —
 
 |#|Project|What it does|Stack|Demo|
 |---|---|---|---|---|
-|01|[Agentic RAG Assistant](https://claude.ai/chat/752de37c-c299-4a89-85fe-c56f772a11e5#-1-agentic-rag-assistant)|Smart Q&A with self-correction and hallucination detection|LangGraph · Hybrid Search · GPT-4o|[🤗 Try it](https://huggingface.co/spaces/fcyber/agentic_rag)|
-|02|[Voice AI Assistant](https://claude.ai/chat/752de37c-c299-4a89-85fe-c56f772a11e5#-2-voice-ai-assistant)|Talk to an AI, get voice responses back|Groq · Whisper · gTTS · Streamlit|[🌐 Live app](https://fcyber-labs-voice-ai-assistant.streamlit.app/)|
-|03|[AI Podcast Generator](https://claude.ai/chat/752de37c-c299-4a89-85fe-c56f772a11e5#-3-ai-news-podcast-generator)|News URLs → produced podcast episode with MP3|LangGraph · BART · Groq · gTTS|[🤗 Try it](https://huggingface.co/spaces/fcyber/ai-podcast)|
-|04|[YouTubeScriptMaster](https://claude.ai/chat/752de37c-c299-4a89-85fe-c56f772a11e5#-4-youtubescriptmaster)|YouTube video → structured script and summary|LangGraph · Groq · yt-dlp · BART|[🤗 Try it](https://huggingface.co/spaces/fcyber/YouTubeScriptMaster)|
-|05|[AI Presentation Generator](https://claude.ai/chat/752de37c-c299-4a89-85fe-c56f772a11e5#-5-ai-presentation-generator)|Plain text → full PowerPoint deck with AI images|LangGraph · Groq · python-pptx · Streamlit|[🤗 Try it](https://huggingface.co/spaces/fcyber/YouTubeScriptMaster)|
+|01|[Agentic RAG Assistant](./01-agentic-rag-assistant)|Smart Q&A with self-correction and hallucination detection|LangGraph · Hybrid Search · GPT-4o|[🤗 Try it](https://huggingface.co/spaces/fcyber/agentic_rag)|
+|02|[Voice AI Assistant](./02-voice-ai-assistant)|Talk to an AI, get voice responses back|Groq · Whisper · gTTS · Streamlit|[🌐 Live app](https://fcyber-labs-voice-ai-assistant.streamlit.app/)|
+|03|[AI Podcast Generator](./03-ai-podcast-generator)|News URLs → produced podcast episode with MP3|LangGraph · BART · Groq · gTTS|[🤗 Try it](https://huggingface.co/spaces/fcyber/ai-podcast)|
+|04|[YouTubeScriptMaster](./04-YouTubeScriptMaster)|YouTube video → structured script and summary|LangGraph · Groq · yt-dlp · BART|[🤗 Try it](https://huggingface.co/spaces/fcyber/YouTubeScriptMaster)|
+|05|[AI Presentation Generator](./05-ai-presentation-generator)|Plain text → full PowerPoint deck with AI images|LangGraph · Groq · python-pptx · Streamlit|[🤗 Try it](https://huggingface.co/spaces/fcyber/YouTubeScriptMaster)|
 
 
 ---

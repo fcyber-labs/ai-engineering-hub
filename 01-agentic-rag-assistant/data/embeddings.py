@@ -1,5 +1,4 @@
 
-from memory.document_loaders import all_markdown_files
 ### Embeddings ###
 
 from typing import List, Tuple
@@ -13,8 +12,16 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_core.tools import StructuredTool
 from langchain_core.documents import Document
 
-# Global embeddings instance (loaded once)
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+# the embedding model is loaded the first time it is needed, not when this file is imported
+_embeddings = None
+
+
+def get_embeddings():
+    global _embeddings
+    if _embeddings is None:
+        _embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    return _embeddings
 
 
 def make_hybrid_retriever_tool(
@@ -29,6 +36,8 @@ def make_hybrid_retriever_tool(
     Returns:
         Tuple[StructuredTool, callable]: (tool, hybrid_retrieve_function)
     """
+    embeddings = get_embeddings()
+
     os.makedirs(db_dir, exist_ok=True)
     index_path = os.path.join(db_dir, "index.faiss")
     docs_path = os.path.join(db_dir, "index.pkl")
@@ -107,21 +116,23 @@ def make_hybrid_retriever_tool(
     dense_retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
     # Hybrid retrieval logic
-    def hybrid_retrieve(query: str, top_k: int = 6) -> List[Document]:
-        """Combine dense + sparse results with simple deduplication"""
+    def hybrid_retrieve(query: str, top_k: int = 10) -> List[Document]:
+        """Combine dense + sparse results with reciprocal rank fusion"""
         dense_docs = dense_retriever.invoke(query)
         sparse_docs = sparse_retriever.invoke(query)
 
-        seen = set()
-        combined = []
+        # every list gives a document 1 / (60 + rank) points, a document found by both
+        # lists gets both. The best scores win, so BM25 hits are not pushed out anymore.
+        scores = {}
+        docs_by_text = {}
+        for found in (dense_docs, sparse_docs):
+            for rank, doc in enumerate(found, start=1):
+                key = doc.page_content.strip()
+                docs_by_text[key] = doc
+                scores[key] = scores.get(key, 0) + 1 / (60 + rank)
 
-        for doc in dense_docs + sparse_docs:
-            key = doc.page_content.strip()
-            if key not in seen:
-                seen.add(key)
-                combined.append(doc)
-
-        return combined[:top_k]
+        best_first = sorted(scores, key=scores.get, reverse=True)
+        return [docs_by_text[key] for key in best_first[:top_k]]
 
     # Tool function
     def tool_func(query: str) -> str:
@@ -143,4 +154,13 @@ def make_hybrid_retriever_tool(
 
 
 
-_, hybrid_retrieve_func = make_hybrid_retriever_tool(all_markdown_files)
+_hybrid_retrieve = None
+
+
+def hybrid_retrieve_func(query: str, top_k: int = 6) -> List[Document]:
+    """Builds the index the first time somebody searches, so importing this file is fast"""
+    global _hybrid_retrieve
+    if _hybrid_retrieve is None:
+        from memory.document_loaders import all_markdown_files
+        _, _hybrid_retrieve = make_hybrid_retriever_tool(all_markdown_files)
+    return _hybrid_retrieve(query, top_k)
